@@ -150,7 +150,7 @@ Returns a time-series of evaluation scores to visualize agent improvement over t
 ### Installation
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/koopatroopa787/quantsentinel-cognee.git
+   git clone https://github.com/koopatroopa787/QuantSentinel.git
    cd quantsentinel
    ```
 2. **Setup Backend:**
