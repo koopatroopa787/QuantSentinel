@@ -11,12 +11,15 @@ logger = logging.getLogger(__name__)
 
 def _phoenix_reachable(host: str, timeout: float = 2.0) -> bool:
     """Quick DNS + TCP probe to check if Phoenix is reachable before registering."""
+    old_timeout = socket.getdefaulttimeout()
     try:
         socket.setdefaulttimeout(timeout)
         socket.getaddrinfo(host, 443)
         return True
     except OSError:
         return False
+    finally:
+        socket.setdefaulttimeout(old_timeout)
 
 
 def setup_tracing() -> None:

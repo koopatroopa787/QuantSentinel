@@ -180,7 +180,7 @@ print(json.dumps(result))
             "_full": full_result,
         }
     except subprocess.TimeoutExpired:
-        return {"status": "error", "stderr": "Backtest timed out after 30 seconds"}
+        return {"status": "error", "stderr": "Backtest timed out after 60 seconds"}
     except json.JSONDecodeError as exc:
         return {"status": "error", "stderr": f"Backtest output was not valid JSON: {exc}"}
     except Exception as exc:

@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from datetime import datetime
 from typing import Any
 
 import requests
 import yfinance as yf
+
+logger = logging.getLogger(__name__)
 
 from tools.cache import get_cached, put
 
