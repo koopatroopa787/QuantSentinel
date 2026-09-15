@@ -24,7 +24,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install test dependencies
-        run: pip install pytest numpy scipy pandas
+        run: pip install pytest numpy scipy pandas requests yfinance
 
-      - name: Run signal factory and stats tools tests
+      - name: Run backend tool tests
         run: pytest backend/tests/ -v
