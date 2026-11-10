@@ -32,7 +32,7 @@ _STATS_BLOCK = """
         "sharpe": float(strat_ret.mean() / (strat_ret.std() + 1e-9) * (252 ** 0.5)),
         "max_drawdown": max_dd,
         "win_rate": win_rate,
-        "num_trades": int(max(len(trades) // 2, 1)),
+        "num_trades": int((position.diff().fillna(position) > 0).sum()),
     }
 """
 
